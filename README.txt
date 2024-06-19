@@ -19,6 +19,7 @@ Eseguire l'applicazione eseguendo la classe Main.java.
 Utilizzo
 Una volta avviata l'applicazione, sarà possibile:
 
-Aggiungere, visualizzare, modificare ed eliminare spese e categorie utilizzando l'interfaccia grafica.
+Aggiungere, visualizzare, modificare ed eliminare spese utilizzando l'interfaccia grafica.
+Aggiungere e visualizzare categorie utilizzando l' interfaccia grafica.
 Inserire manualmente i dati richiesti.
 Le operazioni di modifica ed eliminazione richiederanno l'inserimento dell'ID del record corrispondente.
