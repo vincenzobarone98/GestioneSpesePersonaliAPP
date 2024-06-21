@@ -15,7 +15,7 @@ public class Main extends JFrame{
 	 	private SpesaDAO spesaDAO;
 	    private CategoriaDAO categoriaDAO;
 	    private JTextArea outputReport, outputArea, outputAreaModifica, outputAreaElimina, outputAreaCerca;	     
-	    private JTextField nomeSpesaField, importoField, dataField;
+	    private JTextField nomeSpesaField, importoField, dataField,IDCatModificaField;
 	    private JTextField nomeCategoriaField, descrizioneField, cercaField, IDEliminaCategoriaField, nomeCatModificaField, descrizioneModificaField;
 	    private JTextField IDSpesaModificaField, nomeSpesaModificaField, importoModificaField, dataModificaField, idCategoriaModificaField;
 	    private JTextField IDEliminaField;	   
@@ -288,14 +288,17 @@ public class Main extends JFrame{
 	        dataModificaField = new JTextField();
 	        inputPanel.add(dataModificaField);
 
-	        inputPanel.add(createStyledLabel("Categoria:"));
+	       /* inputPanel.add(createStyledLabel("Categoria:"));
 	        categoriaComboBox1 = new JComboBox<>();
 	        inputPanel.add(categoriaComboBox1);
 
 	        categorie = categoriaDAO.getAllCategorie();
 	        for (Categoria c : categorie) {
 	            categoriaComboBox1.addItem(c.getNomeCategoria());
-	        }
+	        }*/
+	        inputPanel.add(createStyledLabel("ID Categoria:"));
+	        idCategoriaModificaField = new JTextField();
+	        inputPanel.add(idCategoriaModificaField);
 	        
 	        inputPanel.add(new JLabel());
 	        JButton btnModifica = createStyledButton("Modifica Spesa", Color.BLUE);
@@ -306,7 +309,8 @@ public class Main extends JFrame{
 	                IDSpesaModificaField.setText("");
 	                nomeSpesaModificaField.setText("");
 	                importoModificaField.setText("");
-	                dataModificaField.setText("");	             
+	                dataModificaField.setText("");	
+	                idCategoriaModificaField.setText("");
 	            }
 	        });
 	        inputPanel.add(btnModifica);
@@ -314,7 +318,7 @@ public class Main extends JFrame{
 	        inputPanel.add(new JLabel());
 	        inputPanel.add(new JLabel());
 	       
-	        inputPanel.add(createStyledLabel("Categoria:"));
+	       /* inputPanel.add(createStyledLabel("Categoria:"));
 	        categoriaComboBox2 = new JComboBox<>();
 	        inputPanel.add(categoriaComboBox2);
 
@@ -323,7 +327,10 @@ public class Main extends JFrame{
 	        for (Categoria c : categorie) {
 	            categoriaComboBox2.addItem(c.getNomeCategoria());
 	            categorieMap.put(c.getNomeCategoria(), c.getIdCategoria());
-	        }
+	        }*/
+	        inputPanel.add(createStyledLabel("ID Categoria:"));
+	        IDCatModificaField = new JTextField();
+	        inputPanel.add(IDCatModificaField);
 
 	        inputPanel.add(createStyledLabel("Nome Categoria:"));
 	        nomeCatModificaField = new JTextField();
@@ -338,6 +345,7 @@ public class Main extends JFrame{
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
 	                modificaCategoria();
+	                IDCatModificaField.setText("");
 	                nomeCatModificaField.setText("");
 	                descrizioneModificaField.setText("");	                
 	            }
@@ -541,9 +549,9 @@ public class Main extends JFrame{
 	    }
 	    
 	    private void modificaCategoria() {
-	        String nomeCategoria = (String) categoriaComboBox.getSelectedItem();
-	        int idCategoria = categorieMap.get(nomeCategoria);
-
+	       /* String nomeCategoria = (String) categoriaComboBox.getSelectedItem();
+	        int idCategoria = categorieMap.get(nomeCategoria);*/
+	    	int idCategoria = Integer.parseInt(IDCatModificaField.getText());
 	        // Verifica se l'ID della categoria è tra le prime 5 categorie
 	        if (idCategoria <= 5) {
 	            JOptionPane.showMessageDialog(null, "Non puoi modificare le categorie preimpostate.", "Errore", JOptionPane.ERROR_MESSAGE);
@@ -650,5 +658,4 @@ public class Main extends JFrame{
 	    }
 	    
 }
-
 
