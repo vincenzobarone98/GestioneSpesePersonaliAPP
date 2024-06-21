@@ -33,7 +33,7 @@ Esportare i dati relativi alle spese in formato pdf.
 Struttura del Progetto
 Il progetto è strutturato come segue:
 
-src/GestioneSpese: Contiene il codice sorgente Java.
+src/gestioneSpese: Contiene il codice sorgente Java.
 Main.java: Classe principale dell'applicazione che gestisce l'interfaccia grafica e le interazioni con il database.
 Categoria.java: Classe che rappresenta una categoria.
 Spesa.java: Classe che rappresenta una spesa.
