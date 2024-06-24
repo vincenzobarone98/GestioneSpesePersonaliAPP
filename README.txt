@@ -3,8 +3,9 @@ Questo progetto consiste in un'applicazione Java che si connette a un database M
 
 Requisiti
 Java Development Kit (JDK) versione 8 o successiva
+JVM per eseguire l' eseguibile.
 MySQL Server
-Librerie JDBC per MySQL (solitamente fornite dal driver MySQL)
+Librerie JDBC per MySQL (solitamente fornite dal driver MySQL) e PDF.
 
 Importare il progetto in un IDE Java come IntelliJ IDEA o Eclipse.
 
